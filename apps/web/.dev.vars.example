@@ -1,0 +1,20 @@
+# Local Wrangler secrets for `pnpm dev:web`.
+# Copy to apps/web/.dev.vars and fill in the values you actually use.
+
+# Required in production. Local development has a built-in fallback.
+BETTER_AUTH_SECRET=
+
+# Optional GitHub OAuth (account and comment login)
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+# Optional Google OAuth (account and comment login)
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# Optional Turnstile bot protection
+CMS_TURNSTILE_SECRET_KEY=
+
+# Optional Resend email delivery
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=

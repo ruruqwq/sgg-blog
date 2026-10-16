@@ -1,0 +1,20 @@
+# Copy to apps/web/.dev.vars for local Wrangler secrets.
+# Wrangler reads .dev.vars next to apps/web/wrangler.jsonc.
+
+# Required in production. Local development has a built-in fallback.
+BETTER_AUTH_SECRET=
+
+# Optional GitHub OAuth (account and comment login)
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+# Optional Google OAuth (account and comment login)
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# Optional Turnstile bot protection. Site key can also live in wrangler vars.
+CMS_TURNSTILE_SECRET_KEY=
+
+# Optional Resend email delivery
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=

@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blog-starter",
+  "main": "./src/server.ts",
+  "compatibility_date": "2026-05-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  "triggers": {
+    "crons": ["0 9 * * *"],
+  },
+  // Optional: add a custom domain after Cloudflare owns the zone.
+  // "routes": [{ "pattern": "blog.example.com", "custom_domain": true }],
+  "vars": {
+    "VITE_BASE_URL": "https://your-domain.example",
+    "CMS_PUBLIC_SITE_URL": "https://your-domain.example",
+    "CMS_BACKUP_RETENTION_DAYS": "30",
+    "CMS_EMAIL_SENDING_ENABLED": "false",
+    "CMS_EMAIL_FROM": "",
+    "CMS_EMAIL_TO": "",
+    "CMS_PASSWORD_RESET_TTL_MINUTES": "30",
+    "VITE_TURNSTILE_SITE_KEY": "",
+  },
+  "d1_databases": [
+    {
+      "binding": "CMS_DB",
+      "database_name": "blog-starter-cms",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "../../packages/db/migrations",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "CMS_STORAGE",
+      "bucket_name": "blog-starter-assets",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CMS_CACHE",
+      "id": "00000000000000000000000000000000",
+    },
+  ],
+}

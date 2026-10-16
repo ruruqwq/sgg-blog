@@ -1,0 +1,31 @@
+{
+  "name": "山羊爷爷的博客",
+  "description": "记录创作、AI 与日常。",
+  "url": "",
+  "authorName": "山羊爷爷",
+  "authorEmail": "",
+  "authorBio": "视觉设计、AI 与创作日常。",
+  "locales": ["en", "zh"],
+  "primaryLanguage": "zh",
+  "i18n": {
+    "name": {
+      "zh": "山羊爷爷的博客"
+    },
+    "description": {
+      "zh": "记录创作、AI 与日常。"
+    },
+    "authorBio": {
+      "zh": "视觉设计、AI 与创作日常。"
+    }
+  },
+  "i18nRuntime": "paraglide-js",
+  "themePreset": "editorial",
+  "layoutPreset": "journal",
+  "commentsEnabled": true,
+  "commentsRequireApproval": true,
+  "commentAutoBlockEnabled": true,
+  "commentBlockedKeywords": ["博彩", "赌博", "色情", "诈骗", "辱骂", "violence", "scam", "spam"],
+  "emailSendingEnabled": false,
+  "emailVerificationEnabled": false,
+  "githubActionsEnabled": true
+}

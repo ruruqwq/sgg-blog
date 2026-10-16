@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sgg-blog",
+  "main": "./src/server.ts",
+  "compatibility_date": "2026-05-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  "triggers": {
+    "crons": ["0 9 * * *"],
+  },
+  // Optional: add a custom domain after Cloudflare owns the zone.
+  // "routes": [{ "pattern": "blog.example.com", "custom_domain": true }],
+  "vars": {
+    "VITE_BASE_URL": "https://sgg-blog.2655694704.workers.dev",
+    "CMS_PUBLIC_SITE_URL": "https://sgg-blog.2655694704.workers.dev",
+    "CMS_BACKUP_RETENTION_DAYS": "30",
+    "CMS_EMAIL_SENDING_ENABLED": "false",
+    "CMS_EMAIL_FROM": "",
+    "CMS_EMAIL_TO": "",
+    "CMS_PASSWORD_RESET_TTL_MINUTES": "30",
+    "VITE_TURNSTILE_SITE_KEY": "",
+  },
+  "d1_databases": [
+    {
+      "binding": "CMS_DB",
+      "database_name": "sgg-blog-cms",
+      "database_id": "d034fa9d-9b22-4993-8349-db647ed9be70",
+      "migrations_dir": "../../packages/db/migrations",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "CMS_STORAGE",
+      "bucket_name": "sgg-blog-assets",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CMS_CACHE",
+      "id": "5da411b22d824512a1a1b597fb4a8b5d",
+    },
+  ],
+}
